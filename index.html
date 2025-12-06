@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografik Pembentangan: KPH-DI</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e7e5e4; /* Stone-200 background for contrast */
+            color: #1c1917;
+        }
+
+        /* Slide Container Styling */
+        .slide-container {
+            background-color: white;
+            min-height: 90vh; /* Hampir penuh skrin untuk setiap muka */
+            margin-bottom: 2rem;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Page Number Badge */
+        .page-number {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background-color: #f5f5f4;
+            color: #78716c;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        /* Chart Config */
+        .chart-wrapper {
+            position: relative;
+            height: 300px; 
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Decorative Elements */
+        .accent-bar {
+            width: 6rem;
+            height: 0.5rem;
+            background-color: #0f766e; /* Teal */
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="py-8 px-4 sm:px-8 max-w-5xl mx-auto">
+
+    <!-- MUKA 1: TAJUK UTAMA -->
+    <section class="slide-container rounded-xl border-t-8 border-teal-700">
+        <div class="page-number">01 / 10</div>
+        <div class="text-center">
+            <div class="inline-block bg-teal-100 text-teal-800 px-4 py-1 rounded-full text-sm font-bold tracking-wide mb-6">KERTAS KERJA CADANGAN</div>
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+                PROGRAM INKUBATOR DIGITAL<br>
+                <span class="text-teal-700">KESIHATAN AWAM KEDAH</span>
+            </h1>
+            <div class="w-24 h-2 bg-orange-500 mx-auto mb-8"></div>
+            <p class="text-xl text-gray-600 italic mb-8">
+                "Memacu Inovasi Digital dalam Kesihatan Awam"
+            </p>
+            <div class="bg-gray-50 p-6 rounded-lg inline-block text-left mx-auto border border-gray-200">
+                <p class="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">DISEDIAKAN OLEH:</p>
+                <p class="text-lg font-bold text-gray-800">Dr. Ahmad Hanis bin Ahmad Shushami</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUKA 2: LATAR BELAKANG & MASALAH -->
+    <section class="slide-container rounded-xl">
+        <div class="page-number">02 / 10</div>
+        <div class="accent-bar"></div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Latar Belakang & Pernyataan Masalah</h2>
+        
+        <div class="grid md:grid-cols-2 gap-10 items-center h-full">
+            <div class="space-y-6">
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                    <h3 class="text-red-800 font-bold text-lg mb-2">Cabaran Semasa</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start"><span class="mr-2">❌</span> Pemprosesan data yang manual & perlahan.</li>
+                        <li class="flex items-start"><span class="mr-2">❌</span> Kesukaran akses pantas kepada Akta & Garis Panduan sahih.</li>
+                        <li class="flex items-start"><span class="mr-2">❌</span> Birokrasi teknikal menghalang inovasi pantas.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <div class="bg-teal-50 border-l-4 border-teal-500 p-6 rounded-r-lg">
+                    <h3 class="text-teal-800 font-bold text-lg mb-2">Solusi: The Sandbox Approach</h3>
+                    <p class="text-gray-700 mb-4">
+                        Satu pendekatan <strong>"Bottom-Up"</strong> di mana Pakar Perubatan Kesihatan Awam membina sendiri solusi dalam persekitaran terkawal.
+                    </p>
+                    <div class="flex items-center space-x-2 text-teal-700 font-semibold">
+                        <span>🚀 Bina Sendiri</span>
+                        <span>➡️</span>
+                        <span>🧪 Try & Error</span>
+                        <span>➡️</span>
+                        <span>✅ Implementasi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUKA 3: OBJEKTIF -->
+    <section class="slide-container rounded-xl">
+        <div class="page-number">03 / 10</div>
+        <div class="accent-bar bg-orange-500"></div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">Objektif Program</h2>
+        <p class="text-gray-500 mb-8">Mewujudkan ekosistem inovasi digital yang efektif & kos efektif.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Obj 1 -->
+            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+                <div class="text-3xl mb-3">🤖</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Pembangunan AI</h3>
+                <p class="text-gray-600 text-sm">Menghasilkan Chatbot Rujukan Pintar berasaskan sumber sahih (Akta/CPG) yang divalidasi pakar.</p>
+            </div>
+            <!-- Obj 2 -->
+            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+                <div class="text-3xl mb-3">📝</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Automasi Digital</h3>
+                <p class="text-gray-600 text-sm">Membangunkan borang pintar untuk autokira skor risiko, audit, dan statistik harian.</p>
+            </div>
+            <!-- Obj 3 -->
+            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+                <div class="text-3xl mb-3">🎓</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Pendidikan (CME)</h3>
+                <p class="text-gray-600 text-sm">Menyediakan modul pembelajaran kendiri interaktif berasaskan web (Self-paced Learning).</p>
+            </div>
+            <!-- Obj 4 -->
+            <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+                <div class="text-3xl mb-3">📢</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Standardisasi Info</h3>
+                <p class="text-gray-600 text-sm">Menyeragamkan penyebaran maklumat promosi kesihatan (Podcast/Infografik) yang berkualiti.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUKA 4: KOMPOSISI PASUKAN -->
+    <section class="slide-container rounded-xl">
+        <div class="page-number">04 / 10</div>
+        <div class="accent-bar"></div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Komposisi Jawatankuasa</h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl">
+            Diketuai oleh Dr. Ahmad Hanis, program ini menggabungkan wakil daripada 6 sub-komiti utama untuk memastikan pendekatan holistik.
+        </p>
+        
+        <div class="flex flex-col md:flex-row items-center justify-around w-full h-full">
+            <div class="chart-wrapper w-full md:w-1/2">
+                <canvas id="teamChart"></canvas>
+            </div>
+            <div class="w-full md:w-1/2 mt-8 md:mt-0 pl-0 md:pl-12">
+                <ul class="space-y-4">
+                    <li class="flex items-center p-3 bg-teal-50 rounded-lg border border-teal-100">
+                        <span class="w-3 h-3 bg-teal-700 rounded-full mr-3"></span>
+                        <span class="font-bold text-teal-900">Pengurusan Kesihatan Awam</span>
+                    </li>
+                    <li class="flex items-center p-3 bg-teal-50 rounded-lg border border-teal-100">
+                        <span class="w-3 h-3 bg-teal-600 rounded-full mr-3"></span>
+                        <span class="font-bold text-teal-900">Kesihatan Pekerjaan (KPAS)</span>
+                    </li>
+                    <li class="flex items-center p-3 bg-teal-50 rounded-lg border border-teal-100">
+                        <span class="w-3 h-3 bg-teal-500 rounded-full mr-3"></span>
+                        <span class="font-bold text-teal-900">Kesihatan Keluarga</span>
+                    </li>
+                    <li class="flex items-center p-3 bg-teal-50 rounded-lg border border-teal-100">
+                        <span class="w-3 h-3 bg-teal-400 rounded-full mr-3"></span>
+                        <span class="font-bold text-teal-900">Kawalan Penyakit (CDC)</span>
+                    </li>
+                    <li class="flex items-center p-3 bg-teal-50 rounded-lg border border-teal-100">
+                        <span class="w-3 h-3 bg-teal-300 rounded-full mr-3"></span>
+                        <span class="font-bold text-teal-900">Penyakit NCD</span>
+                    </li>
+                    <li class="flex items-center p-3 bg-teal-50 rounded-lg border border-teal-100">
+                        <span class="w-3 h-3 bg-teal-200 rounded-full mr-3"></span>
+                        <span class="font-bold text-teal-900">Promosi Kesihatan</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUKA 5: METODOLOGI (FASA 1 & 2) -->
+    <section class="slide-container rounded-xl bg-gray-900 text-white">
+        <div class="page-number bg-gray-800 text-gray-300">05 / 10</div>
+        <div class="accent-bar bg-teal-400"></div>
+        <h2 class="text-3xl font-bold text-white mb-10">Metodologi: Pembangunan Awal</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Fasa 1 -->
+            <div class="relative pl-8 border-l-4 border-blue-500">
+                <span class="absolute -left-3 top-0 w-6 h-6 bg-blue-500 rounded-full border-4 border-gray-900"></span>
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Fasa 1: Eksperimentasi</h3>
+                <p class="text-gray-300 mb-4 text-sm uppercase tracking-widest">PERSEKITARAN LUAR (SANDBOX)</p>
+                <ul class="space-y-3 text-gray-300">
+                    <li>• Latihan platform <strong>MyGOVUC</strong> (Google Gemini & NotebookLM).</li>
+                    <li>• Pembangunan prototaip di luar rangkaian rasmi KKM (e.g., Persatuan/Universiti).</li>
+                    <li>• Fokus: <em>Try & Error</em> bebas tanpa risiko data pesakit.</li>
+                </ul>
+            </div>
+            
+            <!-- Fasa 2 -->
+            <div class="relative pl-8 border-l-4 border-yellow-500">
+                <span class="absolute -left-3 top-0 w-6 h-6 bg-yellow-500 rounded-full border-4 border-gray-900"></span>
+                <h3 class="text-2xl font-bold text-yellow-400 mb-4">Fasa 2: Pengujian Alpha</h3>
+                <p class="text-gray-300 mb-4 text-sm uppercase tracking-widest">DALAMAN (INTERNAL)</p>
+                <ul class="space-y-3 text-gray-300">
+                    <li>• Penubuhan Jawatankuasa Pengujian Khas.</li>
+                    <li>• Menguji ketepatan algoritma AI (Hallucination Check).</li>
+                    <li>• Mengesan ralat logik (Bugs) dalam kalkulator.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUKA 6: METODOLOGI (FASA 3 & 4) -->
+    <section class="slide-container rounded-xl bg-gray-50 border border-gray-200">
+        <div class="page-number">06 / 10</div>
+        <div class="accent-bar bg-green-600"></div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-10">Metodologi: Validasi & Integrasi</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Fasa 3 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-orange-500">
+                <h3 class="text-2xl font-bold text-orange-600 mb-2">Fasa 3: Validasi & SOP</h3>
+                <hr class="border-gray-100 my-4">
+                <p class="text-gray-600 mb-4">
+                    Menghasilkan dokumen kawalan kualiti sebelum penggunaan meluas.
+                </p>
+                <div class="bg-orange-50 p-4 rounded text-sm text-orange-800 font-medium">
+                    Output Utama: Garis Panduan Operasi Standard (SOP) Penggunaan Selamat.
+                </div>
+            </div>
+            
+            <!-- Fasa 4 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-green-600">
+                <h3 class="text-2xl font-bold text-green-700 mb-2">Fasa 4: Implementasi</h3>
+                <hr class="border-gray-100 my-4">
+                <p class="text-gray-600 mb-4">
+                    Integrasi rasmi ke dalam aliran kerja Pakar Kesihatan Awam Kedah.
+                </p>
+                <div class="bg-green-50 p-4 rounded text-sm text-green-800 font-medium">
+                    Output Utama: Penggunaan produk matang di lapangan secara rasmi.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUKA 7: PROJEK TEKNOLOGI A -->
+    <section class="slide-container rounded-xl">
+        <div class="page-number">07 / 10</div>
+        <div class="flex items-center mb-8">
+            <div class="w-2 h-12 bg-indigo-600 mr-4"></div>
+            <h2 class="text-3xl font-bold text-gray-900">Skop Projek: Inovasi Teknologi</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+            <!-- Projek 1 -->
+            <div class="bg-indigo-50 p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-indigo-900">Projek 1: AI Chatbot</h3>
+                        <span class="bg-white text-indigo-600 px-3 py-1 rounded-full text-xs font-bold shadow-sm">NotebookLM</span>
+                    </div>
+                    <p class="text-indigo-800 mb-6 text-lg">
+                        Membangunkan <strong>"Otak Digital"</strong> yang dilatih khusus dengan Akta 342, CPG, dan Garis Panduan KKM sahaja.
+                    </p>
+                    <ul class="list-disc list-inside text-indigo-700 space-y-2">
+                        <li>Carian klausa undang-undang pantas.</li>
+                        <li>Rujukan protokol klinikal segera.</li>
+                        <li><em>Prompt</em> yang divalidasi pakar.</li>
+                    </ul>
+                </div>
+                <div class="mt-6 text-sm font-semibold text-indigo-400 uppercase">Sasaran: Health Management, CDC, KPAS</div>
+            </div>
+
+            <!-- Projek 2 -->
+            <div class="bg-teal-50 p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-teal-900">Projek 2: Borang Pintar</h3>
+                        <span class="bg-white text-teal-600 px-3 py-1 rounded-full text-xs font-bold shadow-sm">HTML / JS</span>
+                    </div>
+                    <p class="text-teal-800 mb-6 text-lg">
+                        Fail HTML tunggal <strong>(Offline-capable)</strong> untuk kegunaan di kawasan pedalaman tanpa internet.
+                    </p>
+                    <ul class="list-disc list-inside text-teal-700 space-y-2">
+                        <li>Autokira BMI & Skor Risiko.</li>
+                        <li>Fungsi Audit Automatik.</li>
+                        <li>Tandatangan Digital terbina dalam.</li>
+                    </ul>
+                </div>
+                <div class="mt-6 text-sm font-semibold text-teal-400 uppercase">Sasaran: Kesihatan Keluarga, NCD, KPAS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUKA 8: PROJEK TEKNOLOGI B -->
+    <section class="slide-container rounded-xl">
+        <div class="page-number">08 / 10</div>
+        <div class="flex items-center mb-8">
+            <div class="w-2 h-12 bg-pink-600 mr-4"></div>
+            <h2 class="text-3xl font-bold text-gray-900">Skop Projek: Media & Pendidikan</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+            <!-- Projek 3 -->
+            <div class="bg-pink-50 p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-pink-900">Projek 3: Media Digital</h3>
+                        <span class="bg-white text-pink-600 px-3 py-1 rounded-full text-xs font-bold shadow-sm">AI Content</span>
+                    </div>
+                    <p class="text-pink-800 mb-6 text-lg">
+                        Penerbitan siri Podcast Kesihatan dan Infografik dengan tatacara pengesahan ketat.
+                    </p>
+                    <ul class="list-disc list-inside text-pink-700 space-y-2">
+                        <li>Podcast dijana/dibantu NotebookLM.</li>
+                        <li>SOP Pengesahan Infografik AI.</li>
+                        <li>Mencegah penyebaran fakta salah.</li>
+                    </ul>
+                </div>
+                <div class="mt-6 text-sm font-semibold text-pink-400 uppercase">Sasaran: Promosi Kesihatan, CDC</div>
+            </div>
+
+            <!-- Projek 4 -->
+            <div class="bg-orange-50 p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-orange-900">Projek 4: CME Kendiri</h3>
+                        <span class="bg-white text-orange-600 px-3 py-1 rounded-full text-xs font-bold shadow-sm">Interactive Web</span>
+                    </div>
+                    <p class="text-orange-800 mb-6 text-lg">
+                        Modul latihan interaktif berasaskan web untuk pembelajaran kendiri (Self-Paced).
+                    </p>
+                    <ul class="list-disc list-inside text-orange-700 space-y-2">
+                        <li>Simulasi penyelesaian masalah (Wabak/NCD).</li>
+                        <li>Pensijilan berdasarkan kompetensi.</li>
+                        <li>Belajar mengikut masa sendiri.</li>
+                    </ul>
+                </div>
+                <div class="mt-6 text-sm font-semibold text-orange-400 uppercase">Sasaran: Semua Sub-komiti</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUKA 9: JADUAL PERANCANGAN -->
+    <section class="slide-container rounded-xl">
+        <div class="page-number">09 / 10</div>
+        <div class="accent-bar bg-teal-800"></div>
+        <div class="flex justify-between items-end mb-8">
+            <h2 class="text-3xl font-bold text-gray-900">Jadual Perancangan (Timeline)</h2>
+            <div class="bg-teal-100 text-teal-800 px-4 py-2 rounded-lg font-bold">Tempoh: 5 Bulan</div>
+        </div>
+        
+        <div class="bg-white border border-gray-100 p-4 rounded-xl shadow-sm h-full flex items-center justify-center">
+            <div class="chart-wrapper w-full">
+                <canvas id="timelineChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-4 mt-8 text-center">
+            <div class="p-3 bg-gray-50 rounded">
+                <div class="text-2xl font-bold text-gray-800">Bulan 1-2</div>
+                <div class="text-sm text-gray-500">Pasukan & R&D</div>
+            </div>
+            <div class="p-3 bg-gray-50 rounded">
+                <div class="text-2xl font-bold text-gray-800">Bulan 3</div>
+                <div class="text-sm text-gray-500">Ujian Silang</div>
+            </div>
+            <div class="p-3 bg-gray-50 rounded">
+                <div class="text-2xl font-bold text-gray-800">Bulan 4-5</div>
+                <div class="text-sm text-gray-500">SOP & Pelancaran</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUKA 10: IMPAK & PENUTUP -->
+    <section class="slide-container rounded-xl bg-teal-900 text-white text-center flex flex-col items-center justify-center">
+        <div class="page-number bg-teal-800 text-teal-200">10 / 10</div>
+        
+        <div class="w-full max-w-4xl">
+            <h2 class="text-4xl font-bold mb-8">Implikasi & Harapan</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-12 text-left">
+                <div class="bg-teal-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-teal-300 mb-2">💰 Kos Efektif</h3>
+                    <p class="text-teal-100 text-sm">Menggunakan sumber sedia ada dan perisian Open Source untuk meminimumkan belanja.</p>
+                </div>
+                <div class="bg-teal-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-teal-300 mb-2">🚀 Pemerkasaan</h3>
+                    <p class="text-teal-100 text-sm">Mengubah pegawai dari pengguna sistem kepada "Pencipta Penyelesaian".</p>
+                </div>
+                <div class="bg-teal-800 p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-teal-300 mb-2">⭐ Kualiti</h3>
+                    <p class="text-teal-100 text-sm">Penyampaian perkhidmatan kesihatan lebih pantas, tepat, dan seragam.</p>
+                </div>
+            </div>
+
+            <hr class="border-teal-700 mb-10 w-1/2 mx-auto">
+            
+            <p class="text-xl text-teal-100 mb-8 italic">
+                "Inisiatif ini menyahut seruan pendigitalan kerajaan dengan memperkasakan akar umbi."
+            </p>
+            
+            <h3 class="text-2xl font-bold">TERIMA KASIH</h3>
+            <p class="text-teal-400 mt-2">Program Inkubator Digital Kesihatan Awam Kedah</p>
+        </div>
+    </section>
+
+    <!-- JavaScript Charts -->
+    <script>
+        // Common Config
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#4b5563';
+
+        // --- Chart 1: Team Composition (Doughnut) ---
+        const ctxTeam = document.getElementById('teamChart').getContext('2d');
+        new Chart(ctxTeam, {
+            type: 'doughnut',
+            data: {
+                labels: ['Pengurusan', 'KPAS', 'BPK (Keluarga)', 'CDC', 'NCD', 'Promosi'],
+                datasets: [{
+                    data: [1, 1, 1, 1, 1, 1],
+                    backgroundColor: ['#0f766e', '#14b8a6', '#2dd4bf', '#5eead4', '#99f6e4', '#ccfbf1'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }, // Legend is custom HTML
+                    tooltip: { enabled: true }
+                },
+                cutout: '70%'
+            }
+        });
+
+        // --- Chart 2: Timeline (Bar Horizontal) ---
+        const ctxTimeline = document.getElementById('timelineChart').getContext('2d');
+        new Chart(ctxTimeline, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Bulan 1: Pasukan & Latihan',
+                    'Bulan 2: Pembangunan (MVP)',
+                    'Bulan 3: Ujian Silang',
+                    'Bulan 4: Dokumentasi & SOP',
+                    'Bulan 5: Pelancaran Rintis'
+                ],
+                datasets: [{
+                    label: 'Fasa',
+                    data: [20, 40, 60, 80, 100], // Visual progression
+                    backgroundColor: [
+                        '#ccfbf1', '#99f6e4', '#5eead4', '#2dd4bf', '#0f766e'
+                    ],
+                    borderRadius: 8,
+                    barPercentage: 0.7
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { display: false, max: 100 },
+                    y: { 
+                        grid: { display: false },
+                        ticks: { 
+                            font: { size: 14, weight: '600' },
+                            color: '#1f2937'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
